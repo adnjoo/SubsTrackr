@@ -1,9 +1,7 @@
-import type { Subscription } from "@prisma/client";
 import Link from "next/link";
 
-import { CreatePost } from "~/app/_components/create-post";
 import { getServerAuthSession } from "~/server/auth";
-import { api } from "~/trpc/server";
+import { CrudShowcase } from "./_components/CrudShowcase";
 
 export default async function Home() {
   // const hello = await api.post.hello.query({ text: "from tRPC" });
@@ -30,31 +28,5 @@ export default async function Home() {
         <CrudShowcase />
       </div>
     </main>
-  );
-}
-
-async function CrudShowcase() {
-  const session = await getServerAuthSession();
-  if (!session?.user) return null;
-
-  // @ts-expect-error TODO: Property 'subscription' does not exist on type '"The property 'subscription' in your router collides with a built-in method, rename this router or procedure on your backend."'.ts(2339)
-  const subscriptions = await api.subscription.getAll.query();
-
-  return (
-    <div className="w-full max-w-xs">
-      {subscriptions ? (
-        subscriptions.map((sub: Subscription) => (
-          <div className="my-4">
-            <p>Name: {sub.name}</p>
-            <p>Amount: {sub.amount}</p>
-            <p>Notes: {sub.notes}</p>
-          </div>
-        ))
-      ) : (
-        <p>You have no posts yet.</p>
-      )}
-
-      <CreatePost />
-    </div>
   );
 }

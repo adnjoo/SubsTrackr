@@ -37,5 +37,12 @@ export const subscriptionRouter = createTRPCRouter({
     return ctx.db.subscription.delete({
       where: { id: Number(input) },
     });
+  }),
+
+  getTotalAmount: protectedProcedure.query(({ ctx }) => {
+    return ctx.db.subscription.aggregate({
+      _sum: { amount: true },
+      where: { createdBy: { id: ctx.session.user.id } },
+    });
   })
 });
