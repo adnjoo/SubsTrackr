@@ -3,16 +3,20 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-import { api } from "~/trpc/react";
+import { reactApi } from "~/trpc/react";
 
 export function CreatePost() {
   const router = useRouter();
   const [name, setName] = useState("");
+  const [notes, setNotes] = useState("");
+  const [amount, setAmount] = useState(0);
 
-  const createPost = api.post.create.useMutation({
+  const createPost = reactApi.subscription.create.useMutation({
     onSuccess: () => {
       router.refresh();
       setName("");
+      setNotes("");
+      setAmount(0);
     },
   });
 
@@ -20,15 +24,30 @@ export function CreatePost() {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        createPost.mutate({ name });
+        createPost.mutate({ name, notes, amount });
+        // createPost.mutate({ name,  });
       }}
       className="flex flex-col gap-2"
     >
       <input
         type="text"
-        placeholder="Title"
+        placeholder="Subscription Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
+        className="w-full rounded-full px-4 py-2 text-black"
+      />
+      <input
+        type="text"
+        placeholder="Notes"
+        value={notes}
+        onChange={(e) => setNotes(e.target.value)}
+        className="w-full rounded-full px-4 py-2 text-black"
+      />
+      <input
+        type="number"
+        placeholder="Amount"
+        value={amount}
+        onChange={(e) => setAmount(Number(e.target.value))}
         className="w-full rounded-full px-4 py-2 text-black"
       />
       <button

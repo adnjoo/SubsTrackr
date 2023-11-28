@@ -13,6 +13,13 @@ const config = {
   rules: {
     // These opinionated rules are enabled in stylistic-type-checked above.
     // Feel free to reconfigure them to your own preference.
+
+    // added
+    '@typescript-eslint/no-unsafe-assignment': 0,
+    '@typescript-eslint/no-unsafe-member-access': 0,
+    '@typescript-eslint/no-unsafe-call': 0,
+
+    // boiler plate \/
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
 
@@ -31,6 +38,7 @@ const config = {
         checksVoidReturn: { attributes: false },
       },
     ],
+    // boiler plate /\
   },
 };
 
