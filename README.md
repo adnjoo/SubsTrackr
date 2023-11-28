@@ -31,3 +31,7 @@ We welcome contributions! If you'd like to contribute to SubsTrackr, please chec
 
 ### Feedback
 We value your feedback! If you have any suggestions, feature requests, or issues, feel free to open an issue or reach out to us directly.
+
+### License
+
+This project is licensed under the MIT License - see the `LICENSE.txt` file for more information.
