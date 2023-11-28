@@ -1,1 +1,1 @@
-# SubscriptionTrackr
+# SubsTrackr

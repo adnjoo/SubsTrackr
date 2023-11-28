@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Sub Trackr",
+  title: "Subs Trackr",
   description: "Track your subscriptions",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
