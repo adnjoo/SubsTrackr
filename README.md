@@ -1,5 +1,5 @@
 ## SubsTrackr
-SubsTrackr is a powerful subscription tracking web application available at substrackr.com. Built using the T3 stack, it helps users efficiently manage their subscriptions.
+SubsTrackr is a powerful subscription tracking web application available at [substrackr.com](https://www.substrackr.com/). Built using the T3 stack, it helps users efficiently manage their subscriptions.
 
 ### Quick Start
 To get started locally, follow these steps:
