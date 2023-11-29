@@ -20,7 +20,6 @@ export function SubCard({ sub }: SubCardProps) {
     router.refresh();
   };
   
-  // @ts-expect-error - argument of type 'string' is not assignable to parameter of type SubscriptionIcons
   const isSubscriptionIconAvailable = Object.values(SubscriptionIcons).includes(sub.name) 
   // @ts-expect-error - argument of type 'string' is not assignable to parameter of type ExpenseIcons
   const isExpenseIconAvailable = Object.values(ExpenseIcons).includes(sub.name);
@@ -33,9 +32,10 @@ export function SubCard({ sub }: SubCardProps) {
           <Image
             alt={sub.name}
             src={`/icons/${sub.name}.png`}
-            className={`${isExpenseIconAvailable ? 'bg-white rounded-lg' : ''} object-cover`}
+            className='object-contain bg-white rounded-3xl h-10 w-10'
             width={40}
             height={40}
+            unoptimized
           />
         ) : null}
       </div>
