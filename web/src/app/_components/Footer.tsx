@@ -36,7 +36,7 @@ function Footer() {
           </li>
           <li>
             <a
-              href="https://github.com/adnjoo/SubscriptionTrackr"
+              href="https://github.com/adnjoo/SubsTrackr"
               className="me-4 hover:underline md:me-6"
               target="_blank"
             >
