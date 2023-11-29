@@ -27,7 +27,7 @@ export function CreatePost() {
         createPost.mutate({ name, notes, amount });
         // createPost.mutate({ name,  });
       }}
-      className="flex flex-col gap-2"
+      className="flex flex-col gap-2 max-w-xl justify-center mx-auto mt-4"
     >
       <input
         type="text"
