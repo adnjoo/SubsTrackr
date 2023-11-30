@@ -40,7 +40,7 @@ export const MyNavbar = () => {
         {session ? (
           <Link
             href="/api/auth/signout"
-            className="ml-auto text-white hover:text-blue-500"
+            className="md:ml-auto text-white hover:text-blue-500"
           >
             Sign out
           </Link>
