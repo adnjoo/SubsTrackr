@@ -2,7 +2,9 @@
 SubsTrackr is a powerful subscription tracking web application available at [substrackr.com](https://www.substrackr.com/). Built using the T3 stack, it helps users efficiently manage their subscriptions.
 
 <p align="center">
-<img src='https://raw.githubusercontent.com/adnjoo/SubsTrackr/main/web/public/screenshot.png' width='600' />
+  <a href="https://substrackr.com" target="_blank">
+    <img src='https://raw.githubusercontent.com/adnjoo/SubsTrackr/main/web/public/screenshot.png' width='600' />
+  </a>
 </p>
 
 ### Quick Start
