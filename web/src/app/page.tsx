@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     site: "@adnjoo",
     title: "Subs Trackr",
     description: "Track your subscriptions.",
-    images: "/screenshot.png",
+    images: "https://www.substrackr.com/screenshot.png",
   },
 }
 
