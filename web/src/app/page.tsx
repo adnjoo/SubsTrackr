@@ -4,6 +4,20 @@ import { CrudShowcase } from "./_components/CrudShowcase";
 import { LandingPageHero } from "./_components/organisms/LandingPageHero";
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: "Subs Trackr",
+    description: "Track your subscriptions.",
+    type: "website",
+    url: "https://www.substrackr.com",
+    images: [
+      {
+        url: "https://www.substrackr.com/screenshot.png",
+        width: 1200,
+        height: 630,
+        alt: "Subs Trackr",
+      },
+    ],
+  },
   twitter: {
     card: "summary",
     site: "@adnjoo",
