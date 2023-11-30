@@ -1,8 +1,17 @@
-import Head from "next/head";
-
+import type { Metadata } from "next";
 import { getServerAuthSession } from "~/server/auth";
 import { CrudShowcase } from "./_components/CrudShowcase";
 import { LandingPageHero } from "./_components/organisms/LandingPageHero";
+
+export const metadata: Metadata = {
+  twitter: {
+    card: "summary",
+    site: "@adnjoo",
+    title: "Subs Trackr",
+    description: "Track your subscriptions.",
+    images: "/screenshot.png",
+  },
+}
 
 export default async function Home() {
   // const hello = await api.post.hello.query({ text: "from tRPC" });
@@ -10,14 +19,6 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      {/* SEO */}
-      <Head>
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@adnjoo" />
-        <meta name="twitter:title" content="Subs Trackr" />
-        <meta name="twitter:description" content="Track your subscriptions." />
-        <meta name="twitter:image" content="/screenshot.png" />
-      </Head>
 
       <div className="container flex flex-col items-center gap-12 px-4 py-16 ">
         {!session ? <LandingPageHero /> : <CrudShowcase />}

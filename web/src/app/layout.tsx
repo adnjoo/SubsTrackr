@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
+import Head from "next/head";
 import { cookies } from "next/headers";
 
 import { getServerAuthSession } from "~/server/auth";
