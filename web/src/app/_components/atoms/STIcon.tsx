@@ -4,6 +4,12 @@ export type STIconProps = {
   className?: string;
 };
 
+/**
+ * Renders an SVG icon component.
+ *
+ * @param className - Optional class name to apply.
+ * @return {ReactElement} The rendered SVG icon component.
+ */
 export const STIcon: React.FC<STIconProps> = ({ className = "" }) => {
   return (
     <div className={classNames("text-white", className)}>

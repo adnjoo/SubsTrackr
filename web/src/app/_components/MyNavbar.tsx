@@ -3,8 +3,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { Navbar } from "flowbite-react";
-import { classNames } from "../utils/helpers";
 
+import { classNames } from "../utils/helpers";
+import { _PAGES } from "../lib/pages";
 import { STIcon } from "./atoms/STIcon";
 
 export const MyNavbar = () => {
@@ -39,13 +40,13 @@ export const MyNavbar = () => {
         </Link>
         {session ? (
           <Link
-            href="/api/auth/signout"
+            href={_PAGES.SIGN_OUT}
             className="md:ml-auto hover:text-blue-500"
           >
             Sign out
           </Link>
         ) : (
-          <Link href="/api/auth/signin?callbackUrl=/" className="md:ml-auto hover:text-blue-500">
+          <Link href={`${_PAGES.SIGN_IN}?callbackUrl=/`} className="md:ml-auto hover:text-blue-500">
             Sign in
           </Link>
         )}{" "}
