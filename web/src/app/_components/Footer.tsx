@@ -48,7 +48,7 @@ export const Footer = () => {
               <STIcon className="h-8 w-8 " />
             </Link>
             <p className="text-sm leading-6 text-gray-300">
-              Helping users manage subscriptions and finances better.
+              Making Subscription and Money Management Easier for You.
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
@@ -64,27 +64,26 @@ export const Footer = () => {
               ))}
             </div>
           </div>
-          <div className="mt-8 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            {/* Empty grid col */}
-            <div className="hidden lg:block" />
-            {/* Links */}
-            <div>
-              <h3 className="text-sm font-semibold leading-6 text-white">
-                Links
-              </h3>
-              <ul role="list" className="mt-2 space-y-2">
-                {navigation.links.map((item) => (
-                  <li key={item.name}>
-                    <a
-                      href={item.href}
-                      className="text-sm leading-6 text-gray-300 hover:text-white"
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        </div>
+        <div className="mt-8 grid grid-cols-2 gap-8 xl:col-span-2">
+          {/* Links */}
+          <div>
+            {/* Can add back when more links/pages */}
+            {/* <h3 className="text-sm font-semibold leading-6 text-white">
+              Links
+            </h3> */}
+            <ul role="list" className="mt-2 space-y-2">
+              {navigation.links.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    className="text-sm leading-6 text-gray-300 hover:text-white"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         <div className="mt-8 border-t border-white/10 pt-8 sm:mt-20 lg:mt-12">
