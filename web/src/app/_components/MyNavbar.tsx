@@ -14,7 +14,7 @@ export const MyNavbar = () => {
   return (
     <Navbar fluid className="bg-slate-700 p-2 px-4 text-white lg:px-16">
       <Navbar.Brand as={Link} href="/">
-        <STIcon />
+        <STIcon className='h-8 w-8 mb-2' />
         <span className="ml-2 text-lg font-semibold">Subs Trackr</span>
       </Navbar.Brand>
       <Navbar.Toggle />
@@ -45,7 +45,7 @@ export const MyNavbar = () => {
             Sign out
           </Link>
         ) : (
-          <Link href="/api/auth/signin" className="ml-auto">
+          <Link href="/api/auth/signin?callbackUrl=/" className="ml-auto">
             Sign in
           </Link>
         )}{" "}

@@ -1,9 +1,13 @@
-export const STIcon = () => {
+import { classNames } from "~/app/utils/helpers";
+
+export type STIconProps = {
+  className?: string;
+};
+
+export const STIcon: React.FC<STIconProps> = ({ className = "" }) => {
   return (
-    <div className="text-white">
+    <div className={classNames("text-white", className)}>
       <svg
-        width="39"
-        height="44"
         viewBox="0 0 39 44"
         xmlns="http://www.w3.org/2000/svg"
       >
