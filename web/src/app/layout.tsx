@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
 import { getServerAuthSession } from "~/server/auth";
 import { SessionProvider } from "~/app/lib/SessionProvider";
 import { TRPCReactProvider } from "~/trpc/react";
-import Footer from "./_components/Footer";
+import { Footer, MyNavbar } from "./_components/";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,9 +27,10 @@ export default async function RootLayout({
   const session = await getServerAuthSession();
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>
+      <body className={`font-sans ${inter.variable} bg-slate-700`}>
         <SessionProvider session={session}>
           <TRPCReactProvider cookies={cookies().toString()}>
+            <MyNavbar />
             {children}
             <Footer />
           </TRPCReactProvider>

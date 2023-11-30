@@ -16,12 +16,17 @@ export async function CrudShowcase() {
 
   return (
     <div className="w-full max-w-5xl">
+      <div className="mb-12">
+        <CreatePost />
+      </div>
       <div className="my-4 flex justify-between text-xl">
         <span className="text-xl">
           Total Amount: ${totalAmount._sum.amount}
         </span>
 
-        <span className="text-lg text-gray-100">{subscriptions.length} Subscriptions</span>
+        <span className="text-lg text-gray-100">
+          {subscriptions.length} Subscriptions
+        </span>
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -29,8 +34,6 @@ export async function CrudShowcase() {
           <SubCard key={sub.id} sub={sub} />
         ))}
       </div>
-
-      <CreatePost />
     </div>
   );
 }
