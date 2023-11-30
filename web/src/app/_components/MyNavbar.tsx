@@ -31,7 +31,7 @@ export const MyNavbar = () => {
         <Link
           className={classNames(
             pathname === "/about" && "!text-blue-500",
-            "text-white transition-colors hover:text-blue-500",
+            "transition-colors hover:text-blue-500",
           )}
           href="/about"
         >
@@ -40,12 +40,12 @@ export const MyNavbar = () => {
         {session ? (
           <Link
             href="/api/auth/signout"
-            className="md:ml-auto text-white hover:text-blue-500"
+            className="md:ml-auto hover:text-blue-500"
           >
             Sign out
           </Link>
         ) : (
-          <Link href="/api/auth/signin?callbackUrl=/" className="ml-auto">
+          <Link href="/api/auth/signin?callbackUrl=/" className="md:ml-auto hover:text-blue-500">
             Sign in
           </Link>
         )}{" "}
