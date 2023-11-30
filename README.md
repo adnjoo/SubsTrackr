@@ -10,18 +10,22 @@ SubsTrackr is a powerful subscription tracking web application available at [sub
 ### Quick Start
 To get started locally, follow these steps:
 
-Clone this repository.
+1. Clone this repository with `git clone https://github.com/adnjoo/SubsTrackr/`
 
+2. Fill in the `.env` using the `.env.example` file as a guide.
+
+where: 
+- `DATABASE_URL` is your postgres connection string (from e.g. recommend Supabase)
+- `NEXT_AUTH_SECRET` is your JWT secret
+- `DISCORD_CLIENT_ID` and `DISCORD_CLIENT_SECRET` are your Discord credentials for the OAuth flow, which can be obtained at [discord.com/developers](https://discord.com/developers/applications)
+
+3. Run the following script to start up
 ```bash
 npm run dev
 ```
 
 This command will `cd` into the `web` directory and start the development server and allow you to access SubsTrackr locally.
 
-Make sure to fill in the `.env` using the `.env.example` file as a guide.
-
-where `DATABASE_URL` is ur postgres connection string, `NEXT_AUTH_SECRET` is your secret, and 
-`DISCORD_CLIENT_ID` and `DISCORD_CLIENT_SECRET` are your Discord credentials for the OAuth flow.
 
 ### Features
 - Subscription Management: Track and manage all your subscriptions in one place.
