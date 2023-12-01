@@ -21,14 +21,7 @@ export async function CrudShowcase() {
       <div className="mb-12">
         <CreatePost />
       </div>
-      <div className='mx-auto my-4 flex justify-center'>
-        <Link
-          href={_PAGES.SIGN_OUT}
-          className="rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20"
-        >
-          Sign out
-        </Link>
-      </div>
+
       <div className="my-4 flex justify-between text-xl">
         <span className="text-xl">
           Total Amount: ${totalAmount._sum.amount}
@@ -43,6 +36,15 @@ export async function CrudShowcase() {
         {subscriptions?.map((sub: Subscription) => (
           <SubCard key={sub.id} sub={sub} />
         ))}
+      </div>
+
+      <div className="mx-auto my-4 flex justify-center">
+        <Link
+          href={_PAGES.SIGN_OUT}
+          className="rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20 mt-24"
+        >
+          Sign out
+        </Link>
       </div>
     </div>
   );
