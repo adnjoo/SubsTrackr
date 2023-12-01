@@ -1,7 +1,7 @@
 import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
-import Head from "next/head";
+import type { Metadata } from "next";
 import { cookies } from "next/headers";
 
 import { getServerAuthSession } from "~/server/auth";
@@ -14,10 +14,31 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Subs Trackr",
   description: "Track your subscriptions",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
+  openGraph: {
+    title: "Subs Trackr",
+    description: "Track your subscriptions.",
+    type: "website",
+    url: "https://www.substrackr.com",
+    images: [
+      {
+        url: "https://www.substrackr.com/screenshot.png",
+        width: 1200,
+        height: 630,
+        alt: "Subs Trackr",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    site: "@adnjoo",
+    title: "Subs Trackr",
+    description: "Track your subscriptions.",
+    images: "https://www.substrackr.com/screenshot.png",
+  },
 };
 
 export default async function RootLayout({

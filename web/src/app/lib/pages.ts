@@ -4,6 +4,7 @@
 export enum _PAGES {
   HOME = "/",
   ABOUT = "/about",
+  DASHBOARD = "/dashboard",
   SIGN_IN = "/api/auth/signin",
   SIGN_OUT = "/api/auth/signout",
   TWITTER = "https://twitter.com/substrackr",

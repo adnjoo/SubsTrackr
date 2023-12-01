@@ -7,7 +7,8 @@ import { _PAGES } from "../lib/pages";
 const navigation = {
   links: [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
+    { name: "Dashboard", href: _PAGES.DASHBOARD },
+    { name: "About", href: _PAGES.ABOUT },
   ],
 
   social: [
