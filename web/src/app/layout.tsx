@@ -4,8 +4,8 @@ import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 
-import { getServerAuthSession } from "~/server/auth";
-import { SessionProvider } from "~/app/lib/SessionProvider";
+// import { getServerAuthSession } from "~/server/auth";
+// import { SessionProvider } from "~/app/lib/SessionProvider";
 import { TRPCReactProvider } from "~/trpc/react";
 import { Footer, MyNavbar } from "./_components/";
 
@@ -46,17 +46,17 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getServerAuthSession();
+  // const session = await getServerAuthSession();
   return (
     <html lang="en">
       <body className={`font-sans ${inter.variable} bg-slate-700`}>
-        <SessionProvider session={session}>
+        {/* <SessionProvider session={session}> */}
           <TRPCReactProvider cookies={cookies().toString()}>
             <MyNavbar />
             {children}
             <Footer />
           </TRPCReactProvider>
-        </SessionProvider>
+        {/* </SessionProvider> */}
       </body>
     </html>
   );

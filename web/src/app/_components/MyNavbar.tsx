@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 import { Navbar } from "flowbite-react";
 
 import { classNames } from "../utils/helpers";
-import { _PAGES } from "../lib/pages";
+// import { _PAGES } from "../lib/pages";
 import { STIcon } from "./atoms/STIcon";
 
 export const MyNavbar = () => {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
   const pathname = usePathname();
 
   return (
@@ -29,7 +29,7 @@ export const MyNavbar = () => {
         >
           Home
         </Link>
-        {session && (
+        {/* {session && ( */}
           <Link
             className={classNames(
               pathname === "/dashboard" && "!text-blue-500",
@@ -39,7 +39,7 @@ export const MyNavbar = () => {
           >
             Dashboard
           </Link>
-        )}
+        {/* )} */}
         <Link
           className={classNames(
             pathname === "/about" && "!text-blue-500",
@@ -49,7 +49,7 @@ export const MyNavbar = () => {
         >
           About
         </Link>
-        {session ? (
+        {/* {session ? (
           <Link
             href={_PAGES.SIGN_OUT}
             className="hover:text-blue-500 md:ml-auto mb-2 sm:my-0"
@@ -63,7 +63,7 @@ export const MyNavbar = () => {
           >
             Sign in
           </Link>
-        )}{" "}
+        )}{" "} */}
       </Navbar.Collapse>
     </Navbar>
   );

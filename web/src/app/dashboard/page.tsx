@@ -10,7 +10,12 @@ export default async function Dashboard() {
     <main className="flex min-h-screen flex-col items-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
       <div className="container flex flex-col items-center gap-12 px-4 py-32 ">
         {!session ? (
-          <Link href={_PAGES.SIGN_IN}>Sign in to view dashboard</Link>
+          <Link
+            href={_PAGES.SIGN_IN}
+            className="rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20"
+          >
+            Sign in to view dashboard
+          </Link>
         ) : (
           <CrudShowcase />
         )}
