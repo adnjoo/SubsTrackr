@@ -10,9 +10,7 @@ function About() {
           recurring expenses. Created by{" "}
           <a className="underline" href={_PAGES.GITHUB_PERSONAL}>
             Andrew Njoo
-          </a>
-          , this tool aims to assist users in effectively monitoring their
-          subscriptions, ultimately helping them save money.
+          </a>.
         </p>
         <p className="lg:mx-32">
           This project is open-sourced and available on{" "}
@@ -24,13 +22,10 @@ function About() {
           >
             GitHub
           </a>
-          , encouraging collaboration and improvements from the community. Feel
-          free to contribute or customize SubTrackr according to your needs.
+          , encouraging collaboration and improvements from the community. Start
+          simplifying your financial management today with SubTrackr.
         </p>
-        <p className="lg:mx-32">
-          Start simplifying your financial management today with SubTrackr. Say
-          goodbye to overlooked subscriptions and hello to better savings!
-        </p>
+        <p className="lg:mx-32"></p>
       </div>
     </div>
   );
