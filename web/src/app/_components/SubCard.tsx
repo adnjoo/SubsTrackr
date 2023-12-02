@@ -1,8 +1,13 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
-import type { Subscription } from "@prisma/client";
 import Image from "next/image";
+import type { Subscription } from "@prisma/client";
+import {
+  MdOutlineModeEditOutline as MdEdit,
+  MdDelete,
+  MdSave,
+} from "react-icons/md";
 
 import { reactApi } from "~/trpc/react";
 import { ExpenseIcons, SubscriptionIcons } from "../lib/icons";
@@ -12,41 +17,108 @@ export type SubCardProps = {
 };
 
 export function SubCard({ sub }: SubCardProps) {
+  const [isEditing, setIsEditing] = React.useState(false);
+  const [content, setContent] = React.useState<Subscription>(sub);
   const router = useRouter();
-  const deleteSub = reactApi.subscription.delete.useMutation({});
+  const deleteSub = reactApi.subscription.delete.useMutation({
+    onSuccess: () => {
+      router.refresh();
+    },
+  });
+  const upsertSub = reactApi.subscription.upsert.useMutation({
+    onSuccess: () => {
+      router.refresh();
+    },
+  });
+
+  const handleEdit = () => {
+    if (isEditing) {
+      setIsEditing(false);
+    } else {
+      setIsEditing(true);
+    }
+    // compare content with sub.content, if different upsert
+    if (content !== sub) {
+      // @ts-expect-error - TODO: Type 'string | null' is not assignable to type 'string'.
+      upsertSub.mutate({ ...content, id: sub.id });
+    }
+  };
 
   const handleDelete = async () => {
-    deleteSub.mutate(String(sub.id));
-    router.refresh();
+    // check before delete
+    if (window.confirm("Are you sure you want to delete this subscription?")) {
+      deleteSub.mutate(String(sub.id));
+    }
   };
-  
-  const isSubscriptionIconAvailable = Object.values(SubscriptionIcons).includes(sub.name) 
+
+  const isSubscriptionIconAvailable = Object.values(SubscriptionIcons).includes(
+    sub.name,
+  );
   // @ts-expect-error - argument of type 'string' is not assignable to parameter of type ExpenseIcons
   const isExpenseIconAvailable = Object.values(ExpenseIcons).includes(sub.name);
 
   return (
     <div className="my-4 rounded-md border p-4 shadow-md">
-      <div className="flex justify-between">
-        <p className="mb-2 text-lg font-bold">Name: {sub.name}</p>
-        {isSubscriptionIconAvailable || isExpenseIconAvailable ? (
-          <Image
-            alt={sub.name}
-            src={`/icons/${sub.name}.png`}
-            className='object-contain bg-white rounded-3xl h-10 w-10'
-            width={40}
-            height={40}
-            unoptimized
+      {isSubscriptionIconAvailable || isExpenseIconAvailable ? (
+        <Image
+          alt={sub.name}
+          src={`/icons/${sub.name}.png`}
+          className="ml-auto h-10 w-10 rounded-3xl bg-white object-contain"
+          width={40}
+          height={40}
+          unoptimized
+        />
+      ) : (
+        <div className="ml-auto h-10 w-10" />
+      )}
+
+      {/* Content */}
+      {isEditing ? (
+        <div>
+          <input
+            type="text"
+            value={content.name}
+            onChange={(e) => setContent({ ...content, name: e.target.value })}
+            className="mb-2 w-full rounded-md border border-gray-300 p-2 text-black"
           />
-        ) : null}
+          <input
+            type="number"
+            value={content.amount}
+            onChange={(e) =>
+              setContent({ ...content, amount: Number(e.target.value) })
+            }
+            className="mb-2 w-full rounded-md border border-gray-300 p-2 text-black"
+          />
+          <input
+            type="text"
+            value={content.notes!}
+            onChange={(e) => setContent({ ...content, notes: e.target.value })}
+            className="mb-2 w-full rounded-md border border-gray-300 p-2 text-black"
+          />
+        </div>
+      ) : (
+        <div>
+          <p className="mb-2 text-lg font-bold">Name: {sub.name}</p>
+          <p className="mb-2">Amount: ${sub.amount}</p>
+          <p className="mb-2">Notes: {sub.notes}</p>
+        </div>
+      )}
+
+      {/* Actions */}
+      <div>
+        <button
+          onClick={handleEdit}
+          className="mr-2 rounded-md bg-blue-500 px-2 py-1 text-white transition hover:bg-blue-600 focus:outline-none"
+        >
+          {isEditing ? <MdSave /> : <MdEdit />}
+        </button>
+        <button
+          onClick={handleDelete}
+          className="rounded-md bg-red-500 px-2 py-1 text-white transition hover:bg-red-600 focus:outline-none"
+        >
+          <MdDelete />
+        </button>
       </div>
-      <p className="mb-2">Amount: ${sub.amount}</p>
-      <p className="mb-2">Notes: {sub.notes}</p>
-      <button
-        onClick={handleDelete}
-        className="rounded-md bg-red-500 px-4 py-2 text-white hover:bg-red-600 focus:outline-none"
-      >
-        Delete
-      </button>
     </div>
   );
 }

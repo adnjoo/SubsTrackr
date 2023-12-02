@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { getServerAuthSession } from "~/server/auth";
 import { api } from "~/trpc/server";
-import { CreatePost } from "~/app/_components/create-post";
+import { CreatePost } from "~/app/_components/CreatePost";
 import SubCard from "./SubCard";
 import { _PAGES } from "../lib/pages";
 
