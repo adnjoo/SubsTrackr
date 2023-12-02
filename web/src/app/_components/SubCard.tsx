@@ -63,7 +63,7 @@ export function SubCard({ sub }: SubCardProps) {
         <Image
           alt={sub.name}
           src={`/icons/${sub.name}.png`}
-          className="ml-auto h-10 w-10 rounded-3xl bg-white object-contain"
+          className="mb-2 ml-auto h-10 w-10 rounded-3xl bg-white object-contain"
           width={40}
           height={40}
           unoptimized
@@ -79,7 +79,7 @@ export function SubCard({ sub }: SubCardProps) {
             type="text"
             value={content.name}
             onChange={(e) => setContent({ ...content, name: e.target.value })}
-            className="mb-2 w-full rounded-md border border-gray-300 p-2 text-black"
+            className="mb-2 w-full rounded-md border border-gray-300  bg-gray-800 text-white"
           />
           <input
             type="number"
@@ -87,13 +87,13 @@ export function SubCard({ sub }: SubCardProps) {
             onChange={(e) =>
               setContent({ ...content, amount: Number(e.target.value) })
             }
-            className="mb-2 w-full rounded-md border border-gray-300 p-2 text-black"
+            className="mb-2 w-full rounded-md border border-gray-300  bg-gray-800 text-white"
           />
           <input
             type="text"
             value={content.notes!}
             onChange={(e) => setContent({ ...content, notes: e.target.value })}
-            className="mb-2 w-full rounded-md border border-gray-300 p-2 text-black"
+            className="mb-2 w-full rounded-md border border-gray-300  bg-gray-800 text-white"
           />
         </div>
       ) : (
