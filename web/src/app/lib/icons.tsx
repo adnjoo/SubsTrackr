@@ -1,12 +1,8 @@
-/**
- * Subscription icons
- *
- * Company logos
- * */
 export const SubscriptionIcons = {
-  // CONSUMER
-  PRIME: "prime",
+  // Car
   TESLA: "tesla",
+  // Online
+  PRIME: "prime",
   // Fitness
   PELOTON: "peloton",
   STRAVA: "strava",
@@ -19,6 +15,7 @@ export const SubscriptionIcons = {
   YOUTUBE_PREMIUM: "youtubepremium",
   // Music
   APPLEMUSIC: "applemusic",
+  AMAZON_MUSIC: "amazonmusic",
   PANDORA: "pandora",
   SPOTIFY: "spotify",
   // SAAS - design
@@ -32,15 +29,17 @@ export const SubscriptionIcons = {
   // SAAS - AI
   CHATGPT: "chatgpt",
   MIDJOURNEY: "midjourney",
-  // SAAS - developer productivity
-  COPILOT: "copilot",
+  // Meal plans
+  BLUEAPRON: "blueapron",
+  FACTOR: "factor",
+  // Makeup
+  IPSY: "ipsy",
+  // Pets
+  BARKBOX: "barkbox",
+  // Misc
+  DOLLARSHAVECLUB: "dollarshaveclub",
 };
 
-/**
- * Expense icons
- *
- * Not necessarily related to subscriptions but still expenses
- * */
 export const ExpenseIcons = {
   CAR: "car",
   // CAR_INSURANCE: "carinsurance", TODO: add
@@ -50,23 +49,50 @@ export const ExpenseIcons = {
   UTILITIES: "utilities",
 };
 
+export const BusinessIcons = {
+  // COLLABORATION
+  AIRTABLE: "airtable",
+  // COMMUNICATION
+  BASECAMP: "basecamp",
+  // DESIGN
+  FIGMA: "figma",
+  // PRODUCTIVITY
+  JIRA: "jira",
+  // DATA VIZ
+  TABLEAU: "tableau",
+  // VIDEO TOOLS
+  LOOM: "loom",
+  ZOOM: "zoom",
+  // MISC
+  HUBSPOT: "hubspot",
+};
+
+export const DevToolsIcons = {
+  // AI
+  COPILOT: "copilot",
+  // Cloud
+  AWS: "aws",
+  DIGITALOCEAN: "digitalocean",
+  // Monitoring
+  SENTRY: "sentry",
+  // IDE
+  JETBRAINS: "jetbrains",
+};
+
+/**
+ * Checks if an icon is available in the expense, subscription, business, or dev tools icons.
+ *
+ * @param {string} icon - The icon to check.
+ * @return {boolean} - True if the icon is available, false otherwise.
+ */
 export const isIconAvailable = (icon: string) => {
   return (
     Object.values(ExpenseIcons).includes(icon) ||
     Object.values(SubscriptionIcons).includes(icon) ||
-    Object.values(BusinessIcons).includes(icon)
+    Object.values(BusinessIcons).includes(icon) ||
+    Object.values(DevToolsIcons).includes(icon)
   );
 };
-
-/**
- * TODO: Business expense icons
- * */
-export const BusinessIcons = {
-  AIRTABLE: "airtable",
-  BASECAMP: "basecamp",
-  JIRA: "jira",
-};
-
 
 /**
  * Calculates the number of icons in the system.
@@ -79,6 +105,7 @@ export const numIcons = (aggregate?: boolean): number[] | number => {
     Object.keys(ExpenseIcons).length,
     Object.keys(SubscriptionIcons).length,
     Object.keys(BusinessIcons).length,
+    Object.keys(DevToolsIcons).length,
   ];
   if (aggregate) {
     return arr.reduce((a, b) => a + b, 0);

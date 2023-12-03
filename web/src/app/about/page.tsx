@@ -5,6 +5,7 @@ import {
   SubscriptionIcons,
   ExpenseIcons,
   BusinessIcons,
+  DevToolsIcons,
 } from "../lib/icons";
 import { Icon } from "../_components/atoms/Icon";
 import { _PAGES } from "../lib/pages";
@@ -22,7 +23,7 @@ function About() {
         {/* Paragraph 1 */}
         <div className="lg:mx-32">
           SubTrackr is a free subscription tracker designed to simplify managing
-          recurring expenses. Created by{" "}
+          recurring expenses, created by{" "}
           <a className="underline" href={_PAGES.GITHUB_PERSONAL}>
             Andrew Njoo
           </a>
@@ -31,7 +32,7 @@ function About() {
 
         {/* Paragraph 2 */}
         <div className="lg:mx-32">
-          This project is open-sourced and available on{" "}
+          The ST project is open-sourced and available on{" "}
           <a
             href={_PAGES.GITHUB}
             target="_blank"
@@ -47,18 +48,33 @@ function About() {
         {/* Icon Grid */}
         <div className="lg:mx-32">
           We currently support over {numberIcons} subscriptions including:
-          <div className="mt-8 grid grid-cols-6 gap-3 md:grid-cols-8">
+          <div className="mt-8 mb-2 flex">💰 Expense Icons</div>
+          <div className="grid grid-cols-6 gap-3 md:grid-cols-8">
             {Object.values(ExpenseIcons).map((icon) => (
               <Tooltip content={icon} className="capitalize">
                 <Icon name={icon} key={icon} />
               </Tooltip>
             ))}
+          </div>
+          <div className="my-4 flex">✈️ Icons</div>
+          <div className="grid grid-cols-6 gap-3 md:grid-cols-8">
             {Object.values(SubscriptionIcons).map((icon) => (
               <Tooltip content={icon} className="capitalize">
                 <Icon name={icon} key={icon} />
               </Tooltip>
             ))}
+          </div>
+          <div className="my-4 flex">⛵ Icons</div>
+          <div className="grid grid-cols-6 gap-3 md:grid-cols-8">
             {Object.values(BusinessIcons).map((icon) => (
+              <Tooltip content={icon} className="capitalize">
+                <Icon name={icon} key={icon} />
+              </Tooltip>
+            ))}
+          </div>
+          <div className="my-4 flex">👨‍💻 Icons</div>
+          <div className="grid grid-cols-6 gap-3 md:grid-cols-8">
+            {Object.values(DevToolsIcons).map((icon) => (
               <Tooltip content={icon} className="capitalize">
                 <Icon name={icon} key={icon} />
               </Tooltip>
