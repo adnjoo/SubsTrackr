@@ -23,11 +23,7 @@ function About() {
         {/* Paragraph 1 */}
         <div className="lg:mx-32">
           SubTrackr is a free subscription tracker designed to simplify managing
-          recurring expenses, created by{" "}
-          <a className="underline" href={_PAGES.GITHUB_PERSONAL}>
-            Andrew Njoo
-          </a>
-          .
+          recurring expenses.
         </div>
 
         {/* Paragraph 2 */}
@@ -41,13 +37,11 @@ function About() {
           >
             GitHub
           </a>
-          , encouraging collaboration and improvements from the community. Start
-          simplifying your financial management today with SubsTrackr.
         </div>
 
         {/* Icon Grid */}
         <div className="lg:mx-32">
-          We currently support over {numberIcons} subscriptions including:
+          ST currently supports over {numberIcons} subscriptions including:
           <div className="mt-8 mb-2 flex">💰</div>
           <div className="grid grid-cols-6 gap-3 md:grid-cols-8">
             {Object.values(ExpenseIcons).map((icon) => (
