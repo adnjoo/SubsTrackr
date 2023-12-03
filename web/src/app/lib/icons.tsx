@@ -8,10 +8,12 @@ export const SubscriptionIcons = {
   STRAVA: "strava",
   // Media
   APPLETV: "appletvplus",
+  AUDIBLE: "audible",
   DISNEY: "disneyplus",
   HULU: "hulu",
   MAX: "max",
   NETFLIX: "netflix",
+  PARAMOUNTPLUS: "paramountplus",
   YOUTUBE_PREMIUM: "youtubepremium",
   // Music
   APPLEMUSIC: "applemusic",
@@ -38,6 +40,19 @@ export const SubscriptionIcons = {
   BARKBOX: "barkbox",
   // Misc
   DOLLARSHAVECLUB: "dollarshaveclub",
+  // Gaming
+  APPLEARCADE: "applearcade",
+  EAPLAY: "eaplay",
+  NINTENDO: "nintendo",
+  PSPLUS: "psplus",
+  WOW: "wow",
+  XBOX: "xbox",
+  // Personal finance
+  YNAB: "ynab",
+  // Print / digital subscriptions
+  ECONOMIST: "economist",
+  NYT: "nyt",
+  WSJ: "wsj",
 };
 
 export const ExpenseIcons = {
@@ -57,6 +72,7 @@ export const BusinessIcons = {
   // DESIGN
   FIGMA: "figma",
   // PRODUCTIVITY
+  ASANA: "asana",
   JIRA: "jira",
   // DATA VIZ
   TABLEAU: "tableau",
@@ -65,6 +81,8 @@ export const BusinessIcons = {
   ZOOM: "zoom",
   // MISC
   HUBSPOT: "hubspot",
+  // Accounting
+  QUICKBOOKS: "quickbooks",
 };
 
 export const DevToolsIcons = {
@@ -73,6 +91,7 @@ export const DevToolsIcons = {
   // Cloud
   AWS: "aws",
   DIGITALOCEAN: "digitalocean",
+  HEROKU: "heroku",
   // Monitoring
   SENTRY: "sentry",
   // IDE
