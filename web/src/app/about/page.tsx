@@ -23,12 +23,7 @@ function About() {
         {/* Paragraph 1 */}
         <div className="lg:mx-32">
           SubTrackr is a free subscription tracker designed to simplify managing
-          recurring expenses.
-        </div>
-
-        {/* Paragraph 2 */}
-        <div className="lg:mx-32">
-          The ST project is open-sourced and available on{" "}
+          recurring expenses. The project is open-sourced and available on{" "}
           <a
             href={_PAGES.GITHUB}
             target="_blank"
@@ -37,12 +32,13 @@ function About() {
           >
             GitHub
           </a>
+          .
         </div>
 
         {/* Icon Grid */}
         <div className="lg:mx-32">
           ST currently supports over {numberIcons} subscriptions including:
-          <div className="mt-8 mb-2 flex">💰</div>
+          <div className="mb-2 mt-8 flex">💰</div>
           <div className="grid grid-cols-6 gap-3 md:grid-cols-8">
             {Object.values(ExpenseIcons).map((icon) => (
               <Tooltip content={icon} className="capitalize">
