@@ -28,7 +28,7 @@ export default function Home() {
 
         {/* Demo */}
         <div className="mx-auto flex justify-center flex-col">
-          <span className='text-xl md:text-2xl'>Try editing this 😊</span>
+          <span className='text-xl md:text-2xl'>Example</span>
           <Demo demoSub={exampleSub} />
         </div>
       </div>
