@@ -50,7 +50,7 @@ export const Footer = () => {
               <STIcon className="h-8 w-8 " />
             </Link>
             <p className="text-sm leading-6 text-gray-300">
-              Making Subscription and Money Management Easier for You.
+              Making Subscription and Money Management Easier for Everyone
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (

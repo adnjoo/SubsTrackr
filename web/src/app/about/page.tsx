@@ -48,7 +48,7 @@ function About() {
         {/* Icon Grid */}
         <div className="lg:mx-32">
           We currently support over {numberIcons} subscriptions including:
-          <div className="mt-8 mb-2 flex">💰 Expense Icons</div>
+          <div className="mt-8 mb-2 flex">💰</div>
           <div className="grid grid-cols-6 gap-3 md:grid-cols-8">
             {Object.values(ExpenseIcons).map((icon) => (
               <Tooltip content={icon} className="capitalize">
@@ -56,7 +56,7 @@ function About() {
               </Tooltip>
             ))}
           </div>
-          <div className="my-4 flex">✈️ Icons</div>
+          <div className="my-4 flex">✈️</div>
           <div className="grid grid-cols-6 gap-3 md:grid-cols-8">
             {Object.values(SubscriptionIcons).map((icon) => (
               <Tooltip content={icon} className="capitalize">
@@ -64,7 +64,7 @@ function About() {
               </Tooltip>
             ))}
           </div>
-          <div className="my-4 flex">⛵ Icons</div>
+          <div className="my-4 flex">⛵</div>
           <div className="grid grid-cols-6 gap-3 md:grid-cols-8">
             {Object.values(BusinessIcons).map((icon) => (
               <Tooltip content={icon} className="capitalize">
@@ -72,7 +72,7 @@ function About() {
               </Tooltip>
             ))}
           </div>
-          <div className="my-4 flex">👨‍💻 Icons</div>
+          <div className="my-4 flex">👨‍💻</div>
           <div className="grid grid-cols-6 gap-3 md:grid-cols-8">
             {Object.values(DevToolsIcons).map((icon) => (
               <Tooltip content={icon} className="capitalize">
