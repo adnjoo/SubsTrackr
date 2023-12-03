@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import type { Subscription } from "@prisma/client";
 import {
   MdOutlineModeEditOutline as MdEdit,
@@ -10,6 +9,7 @@ import {
 } from "react-icons/md";
 
 import { reactApi } from "~/trpc/react";
+import { Icon } from "./atoms/Icon";
 import { isIconAvailable } from "../lib/icons";
 
 export type SubCardProps = {
@@ -37,7 +37,6 @@ export function SubCard({ sub }: SubCardProps) {
     } else {
       setIsEditing(true);
     }
-    // compare content with sub.content, if different upsert
     if (content !== sub) {
       // @ts-expect-error - TODO: Type 'string | null' is not assignable to type 'string'.
       upsertSub.mutate({ ...content, id: sub.id });
@@ -54,14 +53,7 @@ export function SubCard({ sub }: SubCardProps) {
   return (
     <div className="my-4 rounded-md border p-4 shadow-md">
       {isIconAvailable(sub.name) ? (
-        <Image
-          alt={sub.name}
-          src={`/icons/${sub.name}.png`}
-          className="mb-2 ml-auto h-10 w-10 rounded-3xl bg-white object-contain"
-          width={40}
-          height={40}
-          unoptimized
-        />
+        <Icon name={sub.name} />
       ) : (
         <div className="ml-auto h-10 w-10" />
       )}
