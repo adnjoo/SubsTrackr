@@ -1,101 +1,329 @@
-export const SubscriptionIcons = {
+export type SubscriptionInfo = Record<
+  string,
+  {
+    name: string;
+    icon: string;
+  }
+>;
+
+export const SubscriptionIcons: SubscriptionInfo = {
   // Car
-  TESLA: "tesla",
+  TESLA: {
+    name: "Tesla",
+    icon: "tesla",
+  },
   // Online
-  PRIME: "prime",
+  PRIME: {
+    name: "Prime",
+    icon: "prime",
+  },
   // Fitness
-  PELOTON: "peloton",
-  STRAVA: "strava",
+  PELOTON: {
+    name: "Peloton",
+    icon: "peloton",
+  },
+  STRAVA: {
+    name: "Strava",
+    icon: "strava",
+  },
   // Media
-  APPLETV: "appletvplus",
-  AUDIBLE: "audible",
-  DISNEY: "disneyplus",
-  HULU: "hulu",
-  MAX: "max",
-  NETFLIX: "netflix",
-  PARAMOUNTPLUS: "paramountplus",
-  YOUTUBE_PREMIUM: "youtubepremium",
+  APPLETV: {
+    name: "Apple TV+",
+    icon: "appletvplus",
+  },
+  AUDIBLE: {
+    name: "Audible",
+    icon: "audible",
+  },
+  DISNEY: {
+    name: "Disney+",
+    icon: "disneyplus",
+  },
+  HULU: {
+    name: "Hulu",
+    icon: "hulu",
+  },
+  MAX: {
+    name: "Max",
+    icon: "max",
+  },
+  NETFLIX: {
+    name: "Netflix",
+    icon: "netflix",
+  },
+  PARAMOUNTPLUS: {
+    name: "Paramount+",
+    icon: "paramountplus",
+  },
+  YOUTUBE_PREMIUM: {
+    name: "YouTube Premium",
+    icon: "youtubepremium",
+  },
   // Music
-  APPLEMUSIC: "applemusic",
-  AMAZON_MUSIC: "amazonmusic",
-  PANDORA: "pandora",
-  SPOTIFY: "spotify",
+  APPLEMUSIC: {
+    name: "Apple Music",
+    icon: "applemusic",
+  },
+  AMAZON_MUSIC: {
+    name: "Amazon Music",
+    icon: "amazonmusic",
+  },
+  PANDORA: {
+    name: "Pandora",
+    icon: "pandora",
+  },
+  SPOTIFY: {
+    name: "Spotify",
+    icon: "spotify",
+  },
   // SAAS - design
-  ADOBE: "adobe",
-  CANVA: "canva",
+  ADOBE: {
+    name: "Adobe",
+    icon: "adobe",
+  },
+  CANVA: {
+    name: "Canva",
+    icon: "canva",
+  },
   // SAAS - productivity
-  MICROSOFT365: "microsoft365",
-  NOTION: "notion",
-  SUPERHUMAN: "superhuman",
-  ZAPIER: "zapier",
+  MICROSOFT365: {
+    name: "Microsoft 365",
+    icon: "microsoft365",
+  },
+  NOTION: {
+    name: "Notion",
+    icon: "notion",
+  },
+  SUPERHUMAN: {
+    name: "Superhuman",
+    icon: "superhuman",
+  },
+  ZAPIER: {
+    name: "Zapier",
+    icon: "zapier",
+  },
   // SAAS - AI
-  CHATGPT: "chatgpt",
-  MIDJOURNEY: "midjourney",
+  CHATGPT: {
+    name: "ChatGPT",
+    icon: "chatgpt",
+  },
+  MIDJOURNEY: {
+    name: "Midjourney",
+    icon: "midjourney",
+  },
   // Meal plans
-  BLUEAPRON: "blueapron",
-  FACTOR: "factor",
+  BLUEAPRON: {
+    name: "Blue Apron",
+    icon: "blueapron",
+  },
+  FACTOR: {
+    name: "Factor",
+    icon: "factor",
+  },
   // Makeup
-  IPSY: "ipsy",
+  IPSY: {
+    name: "Ipsy",
+    icon: "ipsy",
+  },
   // Pets
-  BARKBOX: "barkbox",
+  BARKBOX: {
+    name: "BarkBox",
+    icon: "barkbox",
+  },
   // Misc
-  DOLLARSHAVECLUB: "dollarshaveclub",
+  DOLLARSHAVECLUB: {
+    name: "Dollar Shave Club",
+    icon: "dollarshaveclub",
+  },
+  // Membership based warehouse
+  COSTCO: {
+    name: "Costco",
+    icon: "costco",
+  },
+  SAMSCLUB: {
+    name: "Sams Club",
+    icon: "samsclub",
+  },
   // Gaming
-  APPLEARCADE: "applearcade",
-  EAPLAY: "eaplay",
-  NINTENDO: "nintendo",
-  PSPLUS: "psplus",
-  WOW: "wow",
-  XBOX: "xbox",
+  APPLEARCADE: {
+    name: "Apple Arcade",
+    icon: "applearcade",
+  },
+  EAPLAY: {
+    name: "EA Play",
+    icon: "eaplay",
+  },
+  NINTENDO: {
+    name: "Nintendo",
+    icon: "nintendo",
+  },
+  PSPLUS: {
+    name: "PlayStation Plus",
+    icon: "psplus",
+  },
+  WOW: {
+    name: "World of Warcraft",
+    icon: "wow",
+  },
+  XBOX: {
+    name: "Xbox",
+    icon: "xbox",
+  },
   // Personal finance
-  YNAB: "ynab",
+  YNAB: {
+    name: "You Need a Budget (YNAB)",
+    icon: "ynab",
+  },
   // Print / digital subscriptions
-  ECONOMIST: "economist",
-  NYT: "nyt",
-  WSJ: "wsj",
+  ECONOMIST: {
+    name: "The Economist",
+    icon: "economist",
+  },
+  NYT: {
+    name: "The New York Times",
+    icon: "nyt",
+  },
+  WSJ: {
+    name: "The Wall Street Journal",
+    icon: "wsj",
+  },
+  // Storage
+  GOOGLEONE: {
+    name: "Google One",
+    icon: "googleone",
+  },
+  ICLOUD: {
+    name: "iCloud",
+    icon: "icloud",
+  },
+  // Dating
+  BUMBLE: {
+    name: "Bumble",
+    icon: "bumble",
+  },
+  TINDER: {
+    name: "Tinder",
+    icon: "tinder",
+  },
+  // Food delivery
+  DASHPASS: {
+    name: "Dash Pass",
+    icon: "dashpass",
+  }
 };
 
-export const ExpenseIcons = {
-  CAR: "car",
-  // CAR_INSURANCE: "carinsurance", TODO: add
-  GYM: "gym",
-  MORTGAGE: "mortgage",
-  PHONE: "phone",
-  UTILITIES: "utilities",
+export const ExpenseIcons: SubscriptionInfo = {
+  CAR: {
+    name: "Car",
+    icon: "car",
+  },
+  CAR_INSURANCE: {
+    name: "Car Insurance",
+    icon: "carinsurance",
+  },
+  GYM: {
+    name: "Gym",
+    icon: "gym",
+  },
+  MORTGAGE: {
+    name: "Mortgage",
+    icon: "mortgage",
+  },
+  RENT: {
+    name: "Rent",
+    icon: "rent",
+  },
+  PHONE: {
+    name: "Phone",
+    icon: "phone",
+  },
+  UTILITIES: {
+    name: "Utilities",
+    icon: "utilities",
+  },
 };
 
-export const BusinessIcons = {
+export const BusinessIcons: SubscriptionInfo = {
   // COLLABORATION
-  AIRTABLE: "airtable",
+  AIRTABLE: {
+    name: "Airtable",
+    icon: "airtable",
+  },
   // COMMUNICATION
-  BASECAMP: "basecamp",
+  BASECAMP: {
+    name: "Basecamp",
+    icon: "basecamp",
+  },
   // DESIGN
-  FIGMA: "figma",
+  FIGMA: {
+    name: "Figma",
+    icon: "figma",
+  },
   // PRODUCTIVITY
-  ASANA: "asana",
-  JIRA: "jira",
+  ASANA: {
+    name: "Asana",
+    icon: "asana",
+  },
+  JIRA: {
+    name: "Jira",
+    icon: "jira",
+  },
   // DATA VIZ
-  TABLEAU: "tableau",
+  TABLEAU: {
+    name: "Tableau",
+    icon: "tableau",
+  },
   // VIDEO TOOLS
-  LOOM: "loom",
-  ZOOM: "zoom",
+  LOOM: {
+    name: "Loom",
+    icon: "loom",
+  },
+  ZOOM: {
+    name: "Zoom",
+    icon: "zoom",
+  },
   // MISC
-  HUBSPOT: "hubspot",
+  HUBSPOT: {
+    name: "HubSpot",
+    icon: "hubspot",
+  },
   // Accounting
-  QUICKBOOKS: "quickbooks",
+  QUICKBOOKS: {
+    name: "QuickBooks",
+    icon: "quickbooks",
+  },
 };
 
-export const DevToolsIcons = {
+export const DevToolsIcons: SubscriptionInfo = {
   // AI
-  COPILOT: "copilot",
+  COPILOT: {
+    name: "Copilot",
+    icon: "copilot",
+  },
   // Cloud
-  AWS: "aws",
-  DIGITALOCEAN: "digitalocean",
-  HEROKU: "heroku",
+  AWS: {
+    name: "AWS",
+    icon: "aws",
+  },
+  DIGITALOCEAN: {
+    name: "DigitalOcean",
+    icon: "digitalocean",
+  },
+  HEROKU: {
+    name: "Heroku",
+    icon: "heroku",
+  },
   // Monitoring
-  SENTRY: "sentry",
+  SENTRY: {
+    name: "Sentry",
+    icon: "sentry",
+  },
   // IDE
-  JETBRAINS: "jetbrains",
+  JETBRAINS: {
+    name: "JetBrains",
+    icon: "jetbrains",
+  },
+  // Add more dev tools as needed...
 };
 
 /**
@@ -106,10 +334,10 @@ export const DevToolsIcons = {
  */
 export const isIconAvailable = (icon: string) => {
   return (
-    Object.values(ExpenseIcons).includes(icon) ||
-    Object.values(SubscriptionIcons).includes(icon) ||
-    Object.values(BusinessIcons).includes(icon) ||
-    Object.values(DevToolsIcons).includes(icon)
+    Object.values(ExpenseIcons).map(i => i.icon).includes(icon) ||
+    Object.values(SubscriptionIcons).map(i => i.icon).includes(icon) ||
+    Object.values(BusinessIcons).map(i => i.icon).includes(icon) ||
+    Object.values(DevToolsIcons).map(i => i.icon).includes(icon)
   );
 };
 
