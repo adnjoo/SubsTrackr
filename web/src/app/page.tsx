@@ -12,7 +12,7 @@ export default function Home() {
           <h1 className="my-4 text-3xl font-bold lg:text-5xl">Subs Trackr</h1>
           <div className="mx-auto max-w-lg">
             <p className="my-4 text-lg">
-              Free subscription tracker to help you track your subscriptions and save
+              Free subscription tracker to help you track your recurring expenses and save
               money.
             </p>
             <Image
