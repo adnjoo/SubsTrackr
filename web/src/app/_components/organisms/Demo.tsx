@@ -8,7 +8,7 @@ import {
   MdSave,
 } from "react-icons/md";
 
-import { ExpenseIcons, SubscriptionIcons } from "../../lib/icons";
+import { isIconAvailable } from "../../lib/icons";
 
 export interface DemoProps {
   demoSub: Subscription;
@@ -26,18 +26,9 @@ export function Demo({ demoSub }: DemoProps) {
     }
   };
 
-  const isSubscriptionIconAvailable = Object.values(SubscriptionIcons).includes(
-    demo.name,
-  );
-
-  const isExpenseIconAvailable = Object.values(ExpenseIcons).includes(
-    // @ts-expect-error - argument of type 'string' is not assignable to parameter of type ExpenseIcons
-    demo.name,
-  );
-
   return (
     <div className="my-4 max-w-[300px] rounded-md border p-4 shadow-md">
-      {isSubscriptionIconAvailable || isExpenseIconAvailable ? (
+      {isIconAvailable(demo.name) ? (
         <Image
           alt={demo.name}
           src={`/icons/${demo.name}.png`}
