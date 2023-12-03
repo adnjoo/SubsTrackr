@@ -10,7 +10,7 @@ import {
 } from "react-icons/md";
 
 import { reactApi } from "~/trpc/react";
-import { ExpenseIcons, SubscriptionIcons } from "../lib/icons";
+import { isIconAvailable } from "../lib/icons";
 
 export type SubCardProps = {
   sub: Subscription;
@@ -51,15 +51,9 @@ export function SubCard({ sub }: SubCardProps) {
     }
   };
 
-  const isSubscriptionIconAvailable = Object.values(SubscriptionIcons).includes(
-    sub.name,
-  );
-  // @ts-expect-error - argument of type 'string' is not assignable to parameter of type ExpenseIcons
-  const isExpenseIconAvailable = Object.values(ExpenseIcons).includes(sub.name);
-
   return (
     <div className="my-4 rounded-md border p-4 shadow-md">
-      {isSubscriptionIconAvailable || isExpenseIconAvailable ? (
+      {isIconAvailable(sub.name) ? (
         <Image
           alt={sub.name}
           src={`/icons/${sub.name}.png`}

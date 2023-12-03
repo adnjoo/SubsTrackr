@@ -15,6 +15,7 @@ export const SubscriptionIcons = {
   NETFLIX: "netflix",
   YOUTUBE_PREMIUM: "youtubepremium",
   // Music
+  APPLEMUSIC: "applemusic",
   SPOTIFY: "spotify",
   // SAAS - design
   ADOBE: "adobe",
@@ -35,10 +36,20 @@ export const SubscriptionIcons = {
  *
  * Not necessarily related to subscriptions but still expenses
  * */
-export enum ExpenseIcons {
-  GYM = "gym",
-  MORTGAGE = "mortgage",
-  UTILITIES = "utilities",
+export const ExpenseIcons = {
+  CAR: "car",
+  CAR_INSURANCE: "carinsurance",
+  GYM: "gym",
+  MORTGAGE: "mortgage",
+  PHONE: "phone",
+  UTILITIES: "utilities",
+};
+
+export const isIconAvailable = (icon: string) => {
+  return (
+    Object.values(ExpenseIcons).includes(icon) ||
+    Object.values(SubscriptionIcons).includes(icon)
+  );
 };
 
 /**
