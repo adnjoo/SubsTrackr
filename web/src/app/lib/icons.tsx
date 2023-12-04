@@ -18,6 +18,10 @@ export const SubscriptionIcons: SubscriptionInfo = {
     icon: "prime",
   },
   // Fitness
+  APPLE_FITNESS_PLUS: {
+    name: "Apple Fitness+",
+    icon: "applefitnessplus",
+  },
   PELOTON: {
     name: "Peloton",
     icon: "peloton",
@@ -71,6 +75,10 @@ export const SubscriptionIcons: SubscriptionInfo = {
   PANDORA: {
     name: "Pandora",
     icon: "pandora",
+  },
+  SOUNDCLOUD: {
+    name: "SoundCloud Go",
+    icon: "soundcloud",
   },
   SPOTIFY: {
     name: "Spotify",
