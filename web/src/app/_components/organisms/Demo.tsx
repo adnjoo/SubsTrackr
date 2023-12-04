@@ -27,7 +27,7 @@ export function Demo({ demoSub }: DemoProps) {
   };
 
   return (
-    <div className="my-4 max-w-[300px] rounded-md border p-4 shadow-md">
+    <div className="my-4 w-[300px] rounded-md border p-4 shadow-md">
       {isIconAvailable(demo.name) ? (
         <Image
           alt={demo.name}

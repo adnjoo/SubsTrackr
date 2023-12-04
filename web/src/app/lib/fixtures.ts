@@ -9,3 +9,13 @@ export const exampleSub: Subscription = {
   updatedAt: new Date(),
   createdById: "1",
 };
+
+export const exampleSub2: Subscription = {
+  id: 2,
+  name: "netflix",
+  notes: "Sharing with friends and family",
+  amount: 10,
+  createdAt: new Date(),
+  updatedAt: new Date(),
+  createdById: "1",
+};
