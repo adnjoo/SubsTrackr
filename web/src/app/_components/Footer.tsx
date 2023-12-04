@@ -9,6 +9,7 @@ const navigation = {
     { name: "Home", href: "/" },
     { name: "Dashboard", href: _PAGES.DASHBOARD },
     { name: "About", href: _PAGES.ABOUT },
+    { name: 'Feedback', href: 'https://substrackr.canny.io/', external: true },
   ],
 
   social: [
@@ -80,6 +81,7 @@ export const Footer = () => {
                   <a
                     href={item.href}
                     className="text-sm leading-6 text-gray-300 hover:text-white"
+                    target={item.external ? "_blank" : "_self"}
                   >
                     {item.name}
                   </a>
