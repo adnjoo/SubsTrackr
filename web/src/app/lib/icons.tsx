@@ -217,7 +217,7 @@ export const SubscriptionIcons: SubscriptionInfo = {
   DASHPASS: {
     name: "Dash Pass",
     icon: "dashpass",
-  }
+  },
 };
 
 export const ExpenseIcons: SubscriptionInfo = {
@@ -321,6 +321,10 @@ export const DevToolsIcons: SubscriptionInfo = {
     name: "Heroku",
     icon: "heroku",
   },
+  RAILWAY: {
+    name: "Railway",
+    icon: "railway",
+  },
   // Monitoring
   SENTRY: {
     name: "Sentry",
@@ -342,10 +346,18 @@ export const DevToolsIcons: SubscriptionInfo = {
  */
 export const isIconAvailable = (icon: string) => {
   return (
-    Object.values(ExpenseIcons).map(i => i.icon).includes(icon) ||
-    Object.values(SubscriptionIcons).map(i => i.icon).includes(icon) ||
-    Object.values(BusinessIcons).map(i => i.icon).includes(icon) ||
-    Object.values(DevToolsIcons).map(i => i.icon).includes(icon)
+    Object.values(ExpenseIcons)
+      .map((i) => i.icon)
+      .includes(icon) ||
+    Object.values(SubscriptionIcons)
+      .map((i) => i.icon)
+      .includes(icon) ||
+    Object.values(BusinessIcons)
+      .map((i) => i.icon)
+      .includes(icon) ||
+    Object.values(DevToolsIcons)
+      .map((i) => i.icon)
+      .includes(icon)
   );
 };
 
