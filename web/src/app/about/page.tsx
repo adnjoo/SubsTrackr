@@ -15,7 +15,7 @@ function About() {
 
   return (
     <div className="flex min-h-screen flex-col items-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col  gap-12 px-4 py-16">
+      <div className="container flex flex-col gap-12 px-4 py-16">
         <div className="text-center text-5xl font-extrabold tracking-tight lg:mx-32">
           About
         </div>
@@ -70,6 +70,17 @@ function About() {
               </Tooltip>
             ))}
           </div>
+        </div>
+
+        <div className="lg:mx-32 lg:my-16">
+          Looking for an Expense Tracker? Check out{" "}
+          <a
+            href="https://xpensetrackr.com"
+            target="_blank"
+            className="font-semibold hover:underline"
+          >
+            XpenseTrackr
+          </a>
         </div>
       </div>
     </div>
