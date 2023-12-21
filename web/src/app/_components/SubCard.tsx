@@ -94,13 +94,13 @@ export function SubCard({ sub }: SubCardProps) {
       <div>
         <button
           onClick={handleEdit}
-          className="mr-2 rounded-md bg-blue-500 px-2 py-1 text-white transition hover:bg-blue-600 focus:outline-none"
+          className="mr-2 rounded-md bg-blue-500 px-2 py-1 text-white transition hover:bg-blue-600 focus:ring-4"
         >
           {isEditing ? <MdSave /> : <MdEdit />}
         </button>
         <button
           onClick={handleDelete}
-          className="rounded-md bg-red-500 px-2 py-1 text-white transition hover:bg-red-600 focus:outline-none"
+          className="rounded-md bg-red-500 px-2 py-1 text-white transition hover:bg-red-600 focus:ring-4"
         >
           <MdDelete />
         </button>
